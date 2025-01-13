@@ -6,8 +6,8 @@ export const COLLECTION_ID_MESSAGES = import.meta.env.VITE_COLLECTION_ID_MESSAGE
 export const API_ENDPOINT =  import.meta.env.VITE_API_ENDPOINT
 
 const client = new Client()
-client.setProject(PROJECT_ID);
-client.setEndpoint(API_ENDPOINT)
+    .setProject(PROJECT_ID)
+    .setEndpoint(API_ENDPOINT)
 
 export const databases = new Databases(client);
 export const account = new Account(client);
