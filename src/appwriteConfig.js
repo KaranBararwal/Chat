@@ -7,7 +7,7 @@ export const API_ENDPOINT =  import.meta.env.VITE_API_ENDPOINT
 
 const client = new Client()
     .setProject(PROJECT_ID)
-    .setEndpoint(API_ENDPOINT)
+    .setEndpoint(API_ENDPOINT);
 
 export const databases = new Databases(client);
 export const account = new Account(client);
