@@ -19,17 +19,17 @@ const Room = () => {
         const unsubscribe =  client.subscribe(`databases.${DATABASE_ID}.collections.${COLLECTION_ID_MESSAGES}.documents`, response => {
 
             if(response.events.includes("databases.*.collections.*.documents.*.create")){
-                console.log('A MESSAGE WAS CREATED')
+                // console.log('A MESSAGE WAS CREATED')
                 setMessages(prevState => [response.payload, ...prevState])
             }
 
             if(response.events.includes("databases.*.collections.*.documents.*.delete")){
-                console.log('A MESSAGE WAS DELETED!!!')
+                // console.log('A MESSAGE WAS DELETED!!!')
                 setMessages(prevState => prevState.filter(message => message.$id !== response.payload.$id))
             }
         });
 
-        console.log('unsubscribe:', unsubscribe)
+        // console.log('unsubscribe:', unsubscribe)
       
         return () => {
           unsubscribe();
@@ -59,7 +59,7 @@ const Room = () => {
         permissions
       )
 
-      console.log('Created!' , response);
+      // console.log('Created!' , response);
 
       // we have to update the messages so
       // setMessages(prevState => [response , ...messages]);
@@ -76,7 +76,7 @@ const Room = () => {
               Query.limit(20)
            ]
           );
-         console.log('RESPONSE:' , response);
+         // console.log('RESPONSE:' , response);
          setMessages(response.documents);
     }
 
