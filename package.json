@@ -1,7 +1,6 @@
 {
   "name": "chat-app",
   "private": true,
-  "proxy": "https://chat-three-nu-92.vercel.app/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
